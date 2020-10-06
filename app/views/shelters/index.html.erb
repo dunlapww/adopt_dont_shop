@@ -1,0 +1,6 @@
+<h3><a href = "/shelters/new">Add a new shelter</a>
+<br>
+<br>
+<% @shelters.each do |shelter| %>
+  <a href = '/shelters/<%=shelter[:id]%>'><%= shelter.name%></a><br>
+<% end %>

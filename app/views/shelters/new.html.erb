@@ -1,0 +1,17 @@
+<form action="/shelters" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <p>Shelter Name:<p>
+  <input type='text' name='shelter[name]'/><br/>
+  <p>Shelter Address:<p>
+  <input type='text' name='shelter[address]'/><br/>
+  <p>Shelter City:<p>
+  <input type='text' name='shelter[city]'/><br/>
+  <p>Shelter State:<p>
+  <input type='text' name='shelter[state]'/><br/>
+  <p>Shelter Zip:<p>
+  <input type='text' name='shelter[zip]'/><br/>
+  <br/>
+  <input type='submit'>
+</form>
+
+
