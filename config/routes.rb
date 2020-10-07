@@ -8,5 +8,8 @@ Rails.application.routes.draw do
 
   post '/shelters', to: 'shelters#create'
 
+  get '/shelters/:id/edit', to: 'shelters#edit'
+  patch '/shelters/:id', to: 'shelters#update'
+
 
 end
