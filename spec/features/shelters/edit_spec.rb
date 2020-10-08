@@ -15,7 +15,7 @@ describe "As a visitor" do
       expect(find_field('shelter[address]').value).to eq shelter_1.address
       expect(find_field('shelter[city]').value).to eq shelter_1.city
       expect(find_field('shelter[state]').value).to eq shelter_1.state
-      #expect(find_field('shelter[zip]').value).to eq shelter_1.zip
+      expect(find_field('shelter[zip]').value).to eq shelter_1.zip
     end
   end
 end
