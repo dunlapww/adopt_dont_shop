@@ -42,6 +42,7 @@ group :development, :test do
   gem 'simplecov'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry'
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
 group :development do
