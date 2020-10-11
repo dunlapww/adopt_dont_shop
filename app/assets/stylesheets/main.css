@@ -103,3 +103,8 @@ ul {
   height: 100%;
   object-fit: cover;
 }
+
+.upd-desc {
+  length: 50px;
+  height: 50px
+}

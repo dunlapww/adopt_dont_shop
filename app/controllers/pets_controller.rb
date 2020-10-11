@@ -22,7 +22,7 @@ class PetsController < ApplicationController
       sex: params[:sex],
       status: params[:status]
     })
-    redirect_to '/pets'
+    redirect_to "/pets/#{pet.id}"
   end
 
   def destroy

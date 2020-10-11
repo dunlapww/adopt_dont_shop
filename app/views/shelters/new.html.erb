@@ -1,3 +1,14 @@
+<h1>Add a new Shelter</h1>
+<nav>
+  <div id="nav-item">
+    <%= link_to 'View all Pets', '/pets' %>
+  </div>
+  <div id="nav-item">
+    <%= link_to 'View all Shelters', '/shelters' %>
+  </div>
+</nav>
+<br>
+
 <form action="/shelters" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <p>Shelter Name:<p>

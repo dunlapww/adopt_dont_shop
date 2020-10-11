@@ -1,3 +1,14 @@
+<h1>Edit-a-Pet</h1>
+<nav>
+  <div id="nav-item">
+    <%= link_to 'View all Pets', '/pets' %>
+  </div>
+  <div id="nav-item">
+    <%= link_to 'View all Shelters', '/shelters' %>
+  </div>
+</nav>
+<br>
+
 <%= form_tag  "/pets/#{@pet.id}", method: :patch do %>
 <%= label_tag :image %><br>
 <%= text_field_tag :image, value=@pet.image%><br>
@@ -10,6 +21,6 @@
 <%= label_tag :sex %><br>
 <%= text_field_tag :sex, value=@pet.sex %><br>
 <%= label_tag :status %><br>
-<%= text_field_tag :status, value=@pet.status%><br>
+<%= text_field_tag :status, value=@pet.status%><br><br>
 <%= submit_tag 'Update Pet' %>
 <% end %>
