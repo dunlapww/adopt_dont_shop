@@ -45,8 +45,10 @@ class PetsController < ApplicationController
       shelter_id: params[:pet][:shelter_id],
       status: "adoptable"
       })
-    redirect_to "/pets"
+    redirect_to "/pets/#{@pet.id}"
 
   end
+
+
  
 end

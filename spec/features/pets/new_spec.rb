@@ -19,7 +19,7 @@ describe "As a visitor" do
       fill_in "pet[sex]", with: "male"
       page.select "#{@shelter_1.id}", from: 'pet[shelter_id]'
       click_button("Create Pet")
-      expect(current_path).to eq('/pets')
+      expect(current_path).to eq("/pets/#{Pet.last.id}")
       expect(page).to have_content("Charlie")
    end
    it "There is a link to view all pets" do

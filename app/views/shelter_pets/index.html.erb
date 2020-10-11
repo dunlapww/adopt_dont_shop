@@ -14,7 +14,7 @@
 
 <h3><%= link_to "Add Pet to #{@shelter.name}","/shelters/#{@shelter.id}/pets/new"%></h3>
 
-<h2>Pets available for adoption</h2>
+<h2>We have <%= @pet_count %> Pets available for adoption!</h2>
 <%@shelter.pets.each do |pet|%>
   <div class="pet-index-box">
     <div class="pet-index-img-box">

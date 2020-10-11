@@ -3,6 +3,7 @@ class ShelterPetsController < ApplicationController
   def index
     @shelter = Shelter.find(params[:id])
     @pets = Shelter.find(params[:id]).pets
+    @pet_count = @shelter.pets.count
   end
   
   def new
