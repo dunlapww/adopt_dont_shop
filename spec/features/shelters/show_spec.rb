@@ -30,7 +30,7 @@ describe "As a visitor" do
       click_link("View all Shelters")
       expect(current_path).to eq("/shelters")
     end
-    it "There is a link to view all pets" do
+    it "There is a link to view all pets for adoptions from the shelter" do
       visit "/shelters/#{@shelter_1.id}"
       click_button("View our pets for adoption!")
       expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets")

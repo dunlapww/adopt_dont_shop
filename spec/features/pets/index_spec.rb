@@ -21,6 +21,21 @@ describe "As a visitor" do
                                     image: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/black-dog-breeds-black-labrador-retriever-1566497968.jpg")
     
     end
+    it "There is a link to view all pets" do
+      visit "/pets"
+      click_link("View all Pets")
+      expect(current_path).to eq("/pets")
+    end
+    it "There is a link to view all shelters" do
+      visit "/pets"
+      click_link("View all Shelters")
+      expect(current_path).to eq("/shelters")
+    end
+    it "There is a link to add a new pet" do
+      visit "/pets"
+      click_link("New Pet")
+      expect(current_path).to eq("/pets/new")
+    end
     it "I see each Pet in the system including teh Pet's: image, name, age, sex" do
       visit "/pets"
       Pet.all.each do |pet|
@@ -30,9 +45,6 @@ describe "As a visitor" do
         expect(page).to have_xpath("//img[contains(@src,'#{pet.image}')]")
         expect(page).to have_button("Delete #{pet.name}")
         expect(page).to have_button("Update #{pet.name}")
-        # page.find(:css, "a[href$='/pets/#{pet.id}/edit']")
-        # page.find(:css,  "a[href$='/pets/#{pet.id}/edit']")  
-        
       end
     end
     it "Each pets view details button takes me to the pets show page" do

@@ -1,0 +1,30 @@
+<h1>Add a pet to the system</h1>
+<nav>
+  <div id="nav-item">
+    <%= link_to 'View all Pets', '/pets' %>
+  </div>
+  <div id="nav-item">
+    <%= link_to 'View all Shelters', '/shelters' %>
+  </div>
+</nav>
+<br>
+
+<form action="/pets" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <p>Pet Image:<p>
+  <input type='text' name='pet[image]'/><br/>
+  <p>Pet Name:<p>
+  <input type='text' name='pet[name]'/><br/>
+  <p>Pet Description:<p>
+  <input type='text' name='pet[description]'/><br/>
+  <p>Pet Age:<p>
+  <input type='text' name='pet[age]'/><br/>
+  <p>Pet Sex:<p>
+  <input type='text' name='pet[sex]'/><br/>
+  <br/>
+  <p>Select which shelter this pet will belong to:
+  <%= select_tag "pet[shelter_id]", options_for_select(@shelterids) %>
+  </p>
+  <br/>
+  <input type='submit' value ='Create Pet'>
+</form>
