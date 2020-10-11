@@ -1,11 +1,35 @@
-<h1>Pets!</h1>
-
+<h1>All the Pets</h1>
+<nav>
+  <div id="nav-item">
+    <%= link_to 'View all Pets', '/pets' %>
+  </div>
+  <div id="nav-item">
+    <%= link_to 'View all Shelters', '/shelters' %>
+  </div>
+</nav>
+<br>
+<a href = "/pets/new">New Pet</a><br>
+<br>
 <%@pets.each do |pet|%>
-  <img src=<%=pet.image%> style="width:200px";><br>
-  <h1>Name: <%=pet.name%></h1><br>
-  <p>Age: <%=pet.age%>, Sex: <%=pet.sex%><br>
-  Shelter: <%=pet.shelter.name%></p><br>
-  <%= link_to name= "Update #{pet.name}", "/pets/#{pet.id}/edit"%><br><br>
-  <%= link_to name= "Delete #{pet.name}", "/pets/#{pet.id}", method: 'delete', data: {confirm: "Are you sure you want to delete this pet?"}%><br><br>
+  <div class="pet-index-box">
+    <div class="pet-index-img-box">
+      <div class="pet-img">
+        <img src=<%=pet.image%> style="width: 100%; height: 100%; object-fit: cover">
+      </div>
+    </div>
+    <div class="pet-index-dtls-box">
+      <ul>
+        <li>Name: <%=pet.name%></li>
+        <li>Age: <%=pet.age%></li>
+        <li>Sex: <%=pet.sex%></li>
+      </ul>
+    </div>
+    <div class="edit-delete-box">
+      <%= button_to name= "View #{pet.name} Details", "/pets/#{pet.id}", method: 'get'%>
+      <%= button_to name= "Update #{pet.name}", "/pets/#{pet.id}/edit", method: 'get'%>
+      <%= button_to name= "Delete #{pet.name}", "/pets/#{pet.id}", method: 'delete', data: {confirm: "Are you sure you want to delete this pet?"}%>
+    </div>
+  </div>
+  <br>
 
 <%end %>

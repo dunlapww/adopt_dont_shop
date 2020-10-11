@@ -1,10 +1,35 @@
-<a href="/pets">Return to list of pets</a><br><br>
-
-<img src=<%=@pet.image%> style="width:200px";>
-<div style ="font-weight: bold"><%= @pet.name %></div>
-<%= @pet.description %>
-<%= @pet.age %>
-<%= @pet.sex %> 
-<%= @pet.status %>
-<%= button_to name= "Update Pet", "/pets/#{@pet.id}/edit", method: 'get' %>
-<%= button_to name= "Delete Pet", "/pets/#{@pet.id}", method: 'delete', data: {confirm: "Are you sure you want to delete this extremly cute pet?"}%>
+<h1>Say hello to <%= @pet.name %>!</h1>
+<nav>
+  <div id="nav-item">
+    <%= link_to 'View all Pets', '/pets' %>
+  </div>
+  <div id="nav-item">
+    <%= link_to 'View all Shelters', '/shelters' %>
+  </div>
+</nav>
+<br>
+<div class="pet-show-box">
+    <div class="pet-show-img-box">
+      <div class="pet-img">
+        <img src=<%=@pet.image%> style="width: 100%; height: 100%; object-fit: cover">
+      </div>
+    </div>
+    <div class="pet-dtls-box">
+      <p>
+        <h3>Name: <%=@pet.name%></h3><br>
+        Age: <%=@pet.age%><br>
+        Sex: <%=@pet.sex%><br>
+        Status: <%=@pet.status%><br>
+        Shelter: <%=link_to @pet.shelter.name, "/shelters/#{@pet.shelter.id}"%></p><br>
+      </p>
+    </div>
+    <div class="pet-desc-box">
+      <p>
+        Description: <%=@pet.description%>
+      </p>
+    </div>
+    <div class="edit-delete-box">
+      <%= button_to name= "Update #{@pet.name}", "/pets/#{@pet.id}/edit", method: 'get'%>
+      <%= button_to name= "Delete #{@pet.name}", "/pets/#{@pet.id}", method: 'delete', data: {confirm: "Are you sure you want to delete this extremely cute pet?"}%>
+    </div>
+  </div>

@@ -1,26 +1,23 @@
-
-<html>
-  <head>
-    <title></title>
-    <link rel="stylesheet" href="stylesheets/reset.css" title="text/css" />
-    <link rel="stylesheet" href="stylesheets/main.css" title="text/css" />
-  </head>
-  <body>
     <h1>Pet Shelters</h1>
     <nav>
-      <div id="middle">
+      <div id="nav-item">
         <%= link_to 'View all Pets', '/pets' %>
       </div>
-    </nav><br>
-        <a href = "/shelters/new">New Shelter</a><br>
+      <div id="nav-item">
+        <%= link_to 'View all Shelters', '/shelters' %>
+      </div>
+    </nav>
     <br>
+    <a href = "/shelters/new">New Shelter</a><br>
+    <br>
+
     <% @shelters.each do |shelter| %>
-      <div id="middle">
+      <div id="left">
         <a href = '/shelters/<%=shelter[:id]%>'>View <%= shelter.name%></a>
+      </div>
+      <div id="edit-delete">
         <%= button_to name= "Edit Shelter", "/shelters/#{shelter.id}/edit", method: 'get' %>
         <%= button_to name= "Delete Shelter", "/shelters/#{shelter.id}", method: 'delete', data: {confirm: "Are you sure you want to delete #{shelter.name}?"}%>
       </div>
-        <br><br>
+      <br><br>
     <% end %>
-  </body>
-</html>
