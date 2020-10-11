@@ -8,12 +8,12 @@
       </div>
     </nav>
     <br>
-    <a href = "/shelters/new">New Shelter</a><br>
+    <h2><a href = "/shelters/new">New Shelter</a></h2><br>
     <br>
 
     <% @shelters.each do |shelter| %>
       <div id="left">
-        <a href = '/shelters/<%=shelter[:id]%>'>View <%= shelter.name%></a>
+        <a href = '/shelters/<%=shelter[:id]%>'><%= shelter.name%></a>
       </div>
       <div id="edit-delete">
         <%= button_to name= "Edit Shelter", "/shelters/#{shelter.id}/edit", method: 'get' %>

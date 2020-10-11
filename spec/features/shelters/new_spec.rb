@@ -1,30 +1,9 @@
 require 'rails_helper'
 
-describe "As a visitor" do
-  describe "When I visit the Shelter Index page" do
-    it "I see a link to create a new shelter" do
-
-      visit "/shelters"
-
-      expect(page).to have_content("New Shelter")
-    end
-  end
-end
 
 describe "As a visitor" do
-  describe "When I click the new shelter link" do
-    it "I am taken to '/shelter/new'" do
-
-      visit "/shelters"
-      click_link("New Shelter")
-      expect(current_path).to eq("/shelters/new")
-    end
-  end
-end
-
-describe "As a visitor" do
-  describe "When I am taken to '/shelter/new' via the New Shelter link" do
-    it "I fill out a form with name, address, city, state, and zip.  Also when I clikc on link a `POST` request is sent to '/shelters', a new shelter is created, and I am redirected to the Shelter Index page where I see the new Shelter listed." do
+  describe "when I visit shelters/new" do
+    it "I fill out a form with name, address, city, state, and zip." do
 
       visit "/shelters/new"
       fill_in "shelter[name]", with: "Clean Shelter"
@@ -35,7 +14,16 @@ describe "As a visitor" do
       click_button("Create Shelter")
       expect(current_path).to eq("/shelters")
       expect(page).to have_content("Clean Shelter")
-      
+    end
+    it "There is a link to view all pets" do
+      visit "/shelters/new"
+      click_link("View all Pets")
+      expect(current_path).to eq("/pets")
+    end
+    it "There is a link to view all shelters" do
+      visit "/shelters/new"
+      click_link("View all Shelters")
+      expect(current_path).to eq("/shelters")
     end
   end
 end

@@ -20,14 +20,7 @@ describe "As a vistor" do
                                     sex: "male",
                                     image: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/black-dog-breeds-black-labrador-retriever-1566497968.jpg")
     end
-
-
-    it "I see link to add a new adoptable pet for that shelter 'Create Pet'" do
-      visit "shelters/#{@shelter_1.id}/pets"
-      click_link("Create Pet")
-      expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets/new")
-    end
-
+  
     it "I fill in the form with the pet's image, name, description, age, sex" do
       visit "/shelters/#{@shelter_1.id}/pets/new"
 
@@ -45,6 +38,16 @@ describe "As a vistor" do
       expect(pet.age).to eq(5)
       expect(pet.sex).to eq("male")
       expect(pet.status).to eq("adoptable")
+    end
+    it "There is a link to view all pets" do
+      visit "/shelters/#{@shelter_1.id}/pets/new"
+      click_link("View all Pets")
+      expect(current_path).to eq("/pets")
+    end
+    it "There is a link to view all shelters" do
+      visit "/shelters/#{@shelter_1.id}/pets/new"
+      click_link("View all Shelters")
+      expect(current_path).to eq("/shelters")
     end
 
 
