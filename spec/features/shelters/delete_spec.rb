@@ -15,7 +15,6 @@ describe "As a visitor" do
       expect(current_path).to eq("/shelters")
       expect(page).not_to have_content("Awesome Shelter")
 
-      expect(Shelter.all.none? {|shelter| shelter.id == shelter_1.id}).to eq(true)
       
     end
   end
