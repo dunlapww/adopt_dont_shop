@@ -1,5 +1,5 @@
-
-<%@pets.each do |pet|%>
+<%= link_to "Create Pet","/shelters/#{@shelter.id}/pets/new"%>
+<%@shelter.pets.each do |pet|%>
   <img src=<%=pet.image%> style="width:200px";><br>
   <h1>Name: <%=pet.name%></h1><br>
   <p>Age: <%=pet.age%>, Sex: <%=pet.sex%><br>

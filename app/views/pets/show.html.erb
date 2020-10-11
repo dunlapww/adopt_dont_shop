@@ -1,0 +1,9 @@
+<a href="/pets">Return to list of pets</a><br><br>
+
+<img src=<%=@pet.image%> style="width:200px";>
+<div style ="font-weight: bold"><%= @pet.name %></div>
+<%= @pet.description %>
+<%= @pet.age %>
+<%= @pet.sex %> 
+<%= @pet.status %>
+<%= button_to name= "Update Pet", "/pets/#{@pet.id}/edit", method: 'get' %>
