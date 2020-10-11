@@ -5,4 +5,4 @@
   <a href = '/shelters/<%=shelter[:id]%>'>View <%= shelter.name%></a><br>
   <a href = '/shelters/<%=shelter[:id]%>/edit'>Edit <%= shelter.name%></a><br>
   <%= link_to name= "Delete #{shelter.name}", "/shelters/#{shelter.id}", method: 'delete', data: {confirm: "Are you sure you want to delete this shelter?"}%><br><br>
-<% end %>
+<% end %>p
