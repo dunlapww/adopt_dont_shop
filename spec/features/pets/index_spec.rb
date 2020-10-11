@@ -30,7 +30,9 @@ describe "As a visitor" do
         expect(page).to have_xpath("//img[contains(@src,'#{pet.image}')]")
         page.find(:css, "a[href$='/pets/#{pet.id}/edit']")
         expect(page).to have_link("Delete #{pet.name}")
-        page.find(:css, "a[href$='/pets/#{pet.id}']")  
+        page.find(:css, "a[href$='/pets/#{pet.id}']")
+        expect(page).to have_link("Update #{pet.name}")
+        page.find(:css, "a[href$='/pets/#{pet.id}/edit']")  
 
       end
     end
