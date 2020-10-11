@@ -16,6 +16,8 @@ describe "As a user" do
         expect(page).to have_content("View #{shelter.name}")
         expect(page).to have_link("Edit #{shelter.name}")
         page.find(:css, "a[href$='/shelters/#{shelter.id}/edit']")
+        expect(page).to have_link("Delete #{shelter.name}")
+        page.find(:css, "a[href$='/shelters/#{shelter.id}']")
       end
     end
   end
