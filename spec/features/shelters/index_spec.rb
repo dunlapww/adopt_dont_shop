@@ -13,7 +13,9 @@ describe "As a user" do
       visit "/shelters"
       
       Shelter.all.each do |shelter|
-        expect(page).to have_content("#{shelter.name}")
+        expect(page).to have_content("View #{shelter.name}")
+        expect(page).to have_link("Edit #{shelter.name}")
+        page.find(:css, "a[href$='/shelters/#{shelter.id}/edit']")
       end
     end
   end

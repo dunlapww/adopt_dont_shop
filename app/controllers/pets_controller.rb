@@ -24,5 +24,10 @@ class PetsController < ApplicationController
     })
     redirect_to '/pets'
   end
+
+  def destroy
+    Pet.delete(params[:id])
+    redirect_to '/pets'
+  end
  
 end

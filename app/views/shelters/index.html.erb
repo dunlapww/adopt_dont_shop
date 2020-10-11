@@ -2,5 +2,6 @@
 <br>
 <br>
 <% @shelters.each do |shelter| %>
-  <a href = '/shelters/<%=shelter[:id]%>'><%= shelter.name%></a><br>
+  <a href = '/shelters/<%=shelter[:id]%>'>View <%= shelter.name%></a><br>
+  <a href = '/shelters/<%=shelter[:id]%>/edit'>Edit <%= shelter.name%></a><br>
 <% end %>
